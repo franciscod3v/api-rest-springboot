@@ -1,5 +1,6 @@
 package com.franciscod3v.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -22,5 +23,6 @@ public class Product {
     private BigDecimal price;
     @ManyToOne
     @JoinColumn(name = "id_fabricante", nullable = false)
+    @JsonIgnore
     private Maker maker;
 }
